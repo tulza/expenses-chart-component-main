@@ -6,12 +6,17 @@ export default {
     extend: {
       colors: {
         softRed: "hsl(10,79%,65%)",
-        Cyan: "hsl(186, 34%, 60%)",
+        staleCyan: "hsl(186, 34%, 60%)",
+        activeSoftRed: "hsl(10,79%,75%)",
+        activeCyan: "hsl(186, 34%, 70%)",
 
-        Dark_brown: "hsl(25, 47%, 15%)",
-        Medium_brown: "hsl(28, 10%, 53%)",
-        Cream: "hsl(27, 66%, 92%)",
-        Very_pale_orange: "hsl(33, 100%, 98%)",
+        darkBrown: "hsl(25, 47%, 15%)",
+        mediumBrown: "hsl(28, 10%, 53%)",
+        cream: "hsl(27, 66%, 92%)",
+        veryPaleOrange: "hsl(33, 100%, 98%)",
+      },
+      transitionProperty: {
+        height: "height",
       },
     },
   },

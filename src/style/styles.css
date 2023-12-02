@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body,
-#root {
-  @apply h-[100vh] bg-Cream flex justify-center items-center;
+html {
+  @apply text-[18px];
 }
 
-
+body,
+#root {
+  @apply h-[100vh] bg-cream flex justify-center items-center;
+  font-family: "DM Sans", sans-serif;
+}

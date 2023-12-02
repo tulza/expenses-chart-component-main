@@ -1,6 +1,7 @@
 import React from "react";
 import * as data from "../data.json";
 import clsx from "clsx";
+import { useState } from "react";
 
 const converted = JSON.parse(JSON.stringify(data)).default;
 console.log(converted);
@@ -12,14 +13,26 @@ const amounts = converted.map((data) => {
 const maxNum = Math.max(...amounts);
 
 const Bar = ({ day, amount }) => {
-  const barSize = Math.ceil((100 * amount) / maxNum);
+  let barSize = Math.round((100 * amount) / maxNum);
+
   return (
-    <div className="w-8 mx-2 flex flex-col justify-end items-center">
+    <div className="relative w-8 flex flex-col justify-end items-center mx-2">
       <div
-        className="h-[0] w-full bg-softRed transition-all"
-        style={{ height: `${barSize}%` }}
-      ></div>
-      <p>{day}</p>
+        className={clsx(
+          "day-amount-label bg-darkBrown text-veryPaleOrange text-[14px] my-1 p-0.5 rounded",
+          ""
+        )}
+      >
+        ${amount}
+      </div>
+      <button
+        className={clsx(
+          "wa w-full cursor-pointer rounded-[0.25rem] ",
+          "bg-softRed hover:bg-activeSoftRed focus:bg-staleCyan focus:hover:bg-activeCyan"
+        )}
+        style={{ height: `${barSize}px` }}
+      />
+      <p className="text-mediumBrown text-">{day}</p>
     </div>
   );
 };
@@ -27,9 +40,10 @@ const Bar = ({ day, amount }) => {
 const ExpensesChart = () => {
   return (
     <>
-      <div className="flex h-[150px] ">
+      <p className="font-bold text-[24px]">Spending - Last 7 days</p>
+      <div className="flex  my-4">
         {converted.map((data) => {
-          return <Bar day={data.day} amount={data.amount} key={data.amount} />;
+          return <Bar day={data.day} amount={data.amount} key={data.day} />;
         })}
       </div>
     </>
