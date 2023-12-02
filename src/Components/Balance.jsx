@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "/src/logo.svg";
 
 const Balance = () => {
   return (
@@ -6,10 +7,7 @@ const Balance = () => {
       <span>
         My balance <p className="font-bold text-[30px]">$921.48</p>
       </span>
-      <img
-        className="justify-self-end h-[60%] rounded-[1rem]"
-        src="/src/logo.svg"
-      ></img>
+      <img className="justify-self-end h-[60%] rounded-[1rem]" src={Logo}></img>
     </div>
   );
 };

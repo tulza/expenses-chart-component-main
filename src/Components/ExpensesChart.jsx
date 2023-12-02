@@ -13,7 +13,7 @@ const amounts = converted.map((data) => {
 const maxNum = Math.max(...amounts);
 
 const Bar = ({ day, amount, onClick, active }) => {
-  const barSize = Math.round((100 * amount) / maxNum);
+  const barSize = Math.round((1.2 * 100 * amount) / maxNum);
   const ThisActive = Boolean(day == active);
   return (
     <div className="relative w-10 flex flex-col flex-col-reverse items-center mx-2">
@@ -45,7 +45,7 @@ const ExpensesChart = () => {
   return (
     <>
       <p className="font-bold text-[24px]">Spending - Last 7 days</p>
-      <div className="flex  my-4">
+      <div className="flex  my-0">
         {converted.map((data) => {
           return (
             <Bar
