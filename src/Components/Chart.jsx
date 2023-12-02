@@ -10,7 +10,7 @@ const Chart = () => {
         <Balance />
         <div className="bg-veryPaleOrange text-darkBrown p-8 rounded-[1rem]">
           <ExpensesChart />
-          <hr></hr>
+          <hr className="mt-4"></hr>
           <MonthSummary />
         </div>
       </div>
