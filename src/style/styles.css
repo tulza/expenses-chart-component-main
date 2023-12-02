@@ -11,3 +11,8 @@ body,
   @apply h-[100vh] bg-cream flex justify-center items-center;
   font-family: "DM Sans", sans-serif;
 }
+
+.sib-selector:hover + div {
+  @apply visible;
+  opacity: 1;
+}

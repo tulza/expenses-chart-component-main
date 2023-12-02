@@ -16,25 +16,26 @@ const Bar = ({ day, amount, onClick, active }) => {
   const barSize = Math.round((100 * amount) / maxNum);
   const ThisActive = Boolean(day == active);
   return (
-    <div className="relative w-10 flex flex-col justify-end items-center mx-2">
-      <div
-        className={clsx(
-          "day-amount-label bg-darkBrown text-veryPaleOrange  text-center font-bold my-1 p-1 rounded",
-          ThisActive ? "" : "invisible"
-        )}
-      >
-        ${amount}
-      </div>
+    <div className="relative w-10 flex flex-col flex-col-reverse items-center mx-2">
+      <p className="text-mediumBrown text-">{day}</p>
       <button
         className={clsx(
-          "wa w-full cursor-pointer rounded-[0.25rem] ",
-          "bg-softRed hover:bg-activeSoftRed",
-          ThisActive ? "bg-staleCyan hover:bg-activeCyan" : ""
+          "wa w-full cursor-pointer rounded-[0.25rem] sib-selector transition-colors",
+          ThisActive
+            ? "bg-staleCyan hover:bg-activeCyan"
+            : "bg-softRed hover:bg-activeSoftRed"
         )}
         style={{ height: `${barSize}px` }}
         onClick={onClick}
       />
-      <p className="text-mediumBrown text-">{day}</p>
+      <div
+        className={clsx(
+          "day-amount-label bg-darkBrown text-veryPaleOrange  text-center font-bold my-1 p-1 rounded transition-[opacity]",
+          ThisActive ? "" : "invisible opacity-0"
+        )}
+      >
+        ${amount}
+      </div>
     </div>
   );
 };

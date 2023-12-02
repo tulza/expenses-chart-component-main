@@ -17,6 +17,7 @@ export default {
       },
       transitionProperty: {
         height: "height",
+        opacity: "opacity ",
       },
     },
   },
