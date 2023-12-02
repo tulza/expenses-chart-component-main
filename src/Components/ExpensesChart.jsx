@@ -16,10 +16,10 @@ const Bar = ({ day, amount, onClick, active }) => {
   const barSize = Math.round((100 * amount) / maxNum);
   const ThisActive = Boolean(day == active);
   return (
-    <div className="relative w-8 flex flex-col justify-end items-center mx-2">
+    <div className="relative w-10 flex flex-col justify-end items-center mx-2">
       <div
         className={clsx(
-          "day-amount-label bg-darkBrown text-veryPaleOrange text-[14px] my-1 p-0.5 rounded",
+          "day-amount-label bg-darkBrown text-veryPaleOrange  text-center font-bold my-1 p-1 rounded",
           ThisActive ? "" : "invisible"
         )}
       >

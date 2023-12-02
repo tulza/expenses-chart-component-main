@@ -8,7 +8,7 @@ const Chart = () => {
     <Fragment>
       <div>
         <Balance />
-        <div className="bg-veryPaleOrange text-darkBrown my-4 p-4 rounded-[1rem]">
+        <div className="bg-veryPaleOrange text-darkBrown my-4 p-8 rounded-[1rem]">
           <ExpensesChart />
           <hr></hr>
           <MonthSummary />
